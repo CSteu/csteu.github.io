@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+</html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tom Clicker</title>
+    <link rel="icon" href="images/click.png" type="image/x-icon">
+</head>
+<div id="topScreen">
+    <h2>TOM CLICKER</h2>
+    <button id="save">Save</button>
+</div>
+<aside>
+    <div class="topleft">
+        <!--<p id="rate">Rate: $1/click</p>-->
+        <button id="tomClick" class="playerClickers" style="margin-left: 50px;"><img id="tom"
+                src="images/tom.png"></button>
+        <p>Assignments: </p>
+        <p id="assPerSec" style="font-size: 10px;">Rate: $1/click</p>
+        <p id="score" style="font-size: 30px; color:rgb(19, 160, 19); font-weight: 750;">0A</p>
+        <button id="codeClick" class="playerClickers" style="margin-left: 50px;"><img id="codepic"
+                src="images/code.png"></button>
+        <p>Lines of Code: </p>
+        <p id="locPerSec" style="font-size: 10px;">Rate: $1/click</p>
+        <p id="lines" style="font-size: 30px; color:rgb(113, 113, 249); font-weight: 750;">0L</p>
+    </div>
+
+    <div>
+        <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'upgradeTab')">Locations(L)</button>
+            <button class="tablinks" onclick="openCity(event, 'locationTab')">Upgrades(A)</button>
+        </div>
+
+        <div id="upgradeTab" class="tabcontent">
+            <h1 style="color: rgb(223, 223, 223)">Locations</h1>
+            <button id="upgrade1">East Hall +1 <br>(+5 Max Professors)<br>Cost: 2,000L</button>
+            <button id="unlockU2">Unlock Beacom College<br> Cost: 100,000L</button>
+            <button id="upgrade2">Beacom College +1 <br>(+10 Max Grad Classes)<br> Cost: 100,000L</button>
+            <button id="unlockU3">Unlock Mad Labs<br> Cost: 1,000,000L</button>
+            <button id="upgrade3">MadLabs +1 <br>(+30 Max Projects)<br> Cost: 1,000,000L</button>
+            <button id="unlockU4">Unlock DSU<br> Cost: 30,000,000L</button>
+            <button id="upgrade4">Dakota State University +1 <br>(+40 Max Jobs)<br>Cost: 30,000,000L</button>
+            <button id="unlockU5">Unlock United States<br> Cost: 100,000,000L</button>
+            <button id="upgrade5">United States +1 <br>(+45 Max Orgs)<br>Cost: 100,000,000L</button>
+            <button id="unlockU6">Unlock Russia<br> Cost: 2,000,000,000L</button>
+            <button id="upgrade6">Russia +1 <br>(+100 Max Soviets)<br>Cost: 2,000,000,000L</button>
+        </div>
+
+        <div id="locationTab" class="tabcontent">
+            <h1 style="color: rgb(223, 223, 223)">Upgrades</h1>
+            <button id="location1">University Size I<br>Increases Max Students<br>Cost: 20,000A---50% chance</button>
+            <button id="location2">University Size II<br>Increases Max Students<br>Cost: 500,000A---20% chance</button>
+        </div>
+    </div>
+
+    <div class="upgrades">
+        <div class="students">
+            <img src="images/students.png" class="locations">
+            <button id="autoclick">+1 Student<br>+1 click/sec<br> Cost: 1000L</button>
+            <p id="numStudents">example<br>test</p>
+        </div>
+        <div id="location6">
+            <img src="images/russia.png" class="locations" id="russiaPic"></img>
+            <button id="russiaPeople">+1 Soviet<br>+782 Assignments/sec<br> Cost: 500,000L</button>
+            <p id="numSoviets">example<br>test</p>
+        </div>
+        <div id="location5">
+            <img src="images/usa.png" class="locations" id="usaPic"></img>
+            <button id="usaPeople">+1 Org<br>+152 Assignments/sec<br> Cost: 90,000L</button>
+            <p id="numOrgs">example<br>test</p>
+        </div>
+        <div id="location4">
+            <img src="images/dsu.png" class="locations" id="dsuPic"></img>
+            <button id="dsuPeople">+1 Job<br>+83.2 Assignments/sec<br> Cost: 50,000L</button>
+            <p id="numJobs">example<br>test</p>
+        </div>
+        <div id="location3">
+            <img src="images/cyberLabs.png" class="locations" id="madLabsPic"></img>
+            <button id="madLabsPeople">+1 Project<br>+13.8 Assignments/sec<br> Cost: 50,000L</button>
+            <p id="numProj">example<br>test</p>
+        </div>
+        <div id="location2">
+            <img id="beacomPic" src="images/beacom.png" class="locations"></img>
+            <button id="beacomPeople">+1 Grad Class<br>+4.4 Assignments/sec<br> Cost: 5,000L</button>
+            <p id="numGrad">example<br>test</p>
+        </div>
+        <div id="location1">
+            <img id="ehPic" src="images/eastHall.png" class="locations"></img>
+            <button id="ehPeople">+1 Professor<br>+.4 Assignments/sec<br> Cost: 500L</button>
+            <p id="numProfs">example<br>test</p>
+        </div>
+    </div>
+</aside>
+
+<!--Script for tabs-->
+<script>
+    document.getElementById('upgradeTab').style.display = 'block';
+    function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+
+</html>
