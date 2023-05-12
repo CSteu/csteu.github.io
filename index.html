@@ -1,0 +1,26 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Checkout</h1>
+    <p>This is where payemnts are made</p>
+    <form method="POST" action="insert.php">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <button type="submit" id="submit-btn">Pay with PayPal</button>
+    </form>
+
+    <script src="script.js"></script>
+  </body>
+</html>
